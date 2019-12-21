@@ -141,10 +141,14 @@ class QuestionMultiple extends React.Component<QMProps, QMState> {
 					)
 					})
 				}
-				<button className="next-button" onClick={this.proceed}>Next</button>
+				<button disabled={!this.state.answer} className="next-button" onClick={this.proceed}>Next</button>
 			</div>
 			)
 		}
+	}
+
+	componentWillReceiveProps(answers: any) {
+		this.setState({answer: ''});
 	}
 
 	proceed(){
@@ -194,6 +198,10 @@ class QuestionText extends React.Component<QTProps, QTState> {
 	       this.proceed = this.proceed.bind(this);
     }
 
+    componentWillReceiveProps(answers: any) {
+    	this.setState({answer: ''});
+    }
+
     render() {
     	if(this.props.index !== this.props.currentQuestion){
     		return false;
@@ -202,7 +210,7 @@ class QuestionText extends React.Component<QTProps, QTState> {
     			<div className="questionWrapper">
     				<div className="question">{this.convertSafeEntities(this.props.question)}</div>
     				<input type="text" defaultValue="" onChange={this.setAnswer} />
-    				<button className="next-button" onClick={this.proceed}>Next</button>
+    				<button disabled={!this.state.answer} className="next-button" onClick={this.proceed}>Next</button>
     			</div>
     		)
     	}
