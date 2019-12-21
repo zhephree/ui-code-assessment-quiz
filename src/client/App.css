@@ -1,0 +1,36 @@
+body {
+	font-family: sans-serif;
+	color: #101010;
+}
+
+.question {
+	font-size: 18pt;
+	width: 800px;
+}
+
+.question-wrapper label {
+	display: block;
+	margin: 7px auto;
+}
+
+.question-wrapper span {
+	vertical-align: bottom;
+	margin-left: 7px;
+}
+
+.next-button,
+.restart-button {
+	margin-top: 20px;
+	color: #fff;
+	background-color: rgb(26, 87, 213);
+	border: none;
+	padding: 10px 20px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-size: 12pt;
+}
+
+input[type="text"] {
+	display: block;
+}
